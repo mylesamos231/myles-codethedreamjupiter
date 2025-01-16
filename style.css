@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem; /* smaller font size on mobile */
   font-weight: bold;
   color: #2C3E50;
   text-transform: uppercase;
@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* smaller font size on mobile */
   font-weight: 600;
   color: #2C3E50;
   margin-bottom: 10px;
@@ -37,7 +37,7 @@ nav {
 nav ul {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px; /* smaller gap on mobile */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -150,4 +150,101 @@ section {
   border-radius: 50%;
   display: block;
   margin: 0 auto;
+}
+
+/* Mobile Styles - Default (Mobile-First Approach) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  #Experience {
+    display: block;
+  }
+
+  #Experience .job {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #Connect {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 601px) and (max-width: 900px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  #Experience {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  #Experience .job {
+    width: calc(50% - 10px); /* 2 items per row */
+  }
+
+  #Connect {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  #profile-picture {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 901px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  #Experience {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  #Experience .job {
+    width: calc(33.33% - 20px); /* 3 items per row */
+  }
+
+  #Connect {
+    justify-content: space-evenly;
+  }
+
+  #profile-picture {
+    width: 160px;
+    height: 160px;
+  }
 }
