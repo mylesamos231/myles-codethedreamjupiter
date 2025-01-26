@@ -152,6 +152,43 @@ section {
   margin: 0 auto;
 }
 
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+#skills li {
+  background-color: #e7e7e7;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  #skills ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  #skills ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 901px) {
+  #skills ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+
 /* Mobile Styles - Default (Mobile-First Approach) */
 @media (max-width: 600px) {
   h1 {
