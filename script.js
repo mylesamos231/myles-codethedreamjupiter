@@ -19,7 +19,7 @@ copyright.innerHTML = `&copy; Your Name ${thisYear}`;
 footer.appendChild(copyright);
 
 // List of skills
-const skills = ["JavaScript", "HTML", "CSS", "Python", "GitHub"];
+const skills = ["JavaScript", "HTML", "CSS", "Python", "GitHub", "Github Desktop"];
 
 // Select the skills section and the <ul> element
 const skillsSection = document.getElementById('skills');
