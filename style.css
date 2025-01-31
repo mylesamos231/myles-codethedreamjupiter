@@ -2,23 +2,22 @@
 body {
   background-color: #f0f0f0;
   color: #333;
-  font-family: 'Roboto', sans-serif; /* or Arial if you prefer */
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 h1 {
-  font-size: 2.5rem; /* smaller font size on mobile */
+  font-size: 2.5rem;
   font-weight: bold;
   color: #2C3E50;
-  text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
   margin-top: 20px;
 }
 
 h2 {
-  font-size: 1.5rem; /* smaller font size on mobile */
+  font-size: 1.5rem;
   font-weight: 600;
   color: #2C3E50;
   margin-bottom: 10px;
@@ -37,7 +36,7 @@ nav {
 nav ul {
   display: flex;
   justify-content: center;
-  gap: 10px; /* smaller gap on mobile */
+  gap: 10px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -60,7 +59,7 @@ section {
   max-width: 800px;
 }
 
-#About, #Experience, #Connect {
+#about, #experience, #connect, #leave-message, #messages {
   margin-bottom: 20px;
   padding: 20px;
   background-color: #fff;
@@ -68,16 +67,16 @@ section {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#About {
+#about {
   text-align: center;
 }
 
-#Experience ul {
+#experience ul, #skills ul, #messages ul {
   list-style-type: none;
   padding: 0;
 }
 
-#Experience li {
+#experience li, #skills li, #messages li {
   background-color: #e7e7e7;
   padding: 15px;
   margin-bottom: 10px;
@@ -85,203 +84,68 @@ section {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Flexbox Layout for "Experience" Section */
-#Experience {
+/* Picture of Myles Styling */
+#profile-picture {
+ text-align: center;
+ margin-left: 16%;
+ border-radius: 50%;
+}
+
+/* Form Styling */
+#leave-message form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
-#Experience .job {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #e7e7e7;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.job-title {
+#leave-message label {
   font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.job-dates {
-  color: gray;
-}
-
-.job-description {
   margin-top: 10px;
-  font-size: 1rem;
-  color: #555;
 }
 
-/* Connect Section Flexbox */
-#Connect {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-}
-
-#Connect a {
-  color: #3498db;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-#Connect a:hover {
-  color: #2980b9;
-  text-decoration: underline;
-}
-
-#Connect a i {
-  margin-right: 8px;
-}
-
-#Connect a:hover i {
-  transform: scale(1.2);
-}
-
-/* Profile Picture Styling */
-#profile-picture {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto;
-}
-
-#skills ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  list-style: none;
-  padding: 0;
-}
-
-#skills li {
-  background-color: #e7e7e7;
+#leave-message input, #leave-message textarea {
+  width: 100%;
   padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 600px) {
-  #skills ul {
-    flex-direction: column;
-    align-items: center;
-  }
+#leave-message button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
-  #skills ul {
-    flex-direction: row;
-    justify-content: center;
-  }
+#leave-message button:hover {
+  background-color: #2980b9;
 }
 
-@media (min-width: 901px) {
-  #skills ul {
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
+#messages button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
+#messages button:hover {
+  background-color: darkred;
+}
 
-/* Mobile Styles - Default (Mobile-First Approach) */
 @media (max-width: 600px) {
   h1 {
     font-size: 2rem;
   }
-
   h2 {
     font-size: 1.3rem;
   }
-
-  #Experience {
-    display: block;
-  }
-
-  #Experience .job {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #Connect {
-    flex-direction: column;
-    gap: 10px;
-  }
-
   nav ul {
     flex-direction: column;
     gap: 15px;
-  }
-
-  #profile-picture {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-/* Tablet Styles */
-@media (min-width: 601px) and (max-width: 900px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  #Experience {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  #Experience .job {
-    width: calc(50% - 10px); /* 2 items per row */
-  }
-
-  #Connect {
-    flex-direction: row;
-    gap: 30px;
-  }
-
-  #profile-picture {
-    width: 140px;
-    height: 140px;
-  }
-}
-
-/* Desktop Styles */
-@media (min-width: 901px) {
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  #Experience {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  #Experience .job {
-    width: calc(33.33% - 20px); /* 3 items per row */
-  }
-
-  #Connect {
-    justify-content: space-evenly;
-  }
-
-  #profile-picture {
-    width: 160px;
-    height: 160px;
   }
 }

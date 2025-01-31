@@ -1,25 +1,48 @@
-// Create a footer element
-const footer = document.createElement('footer');
+// Select the message form
+const messageForm = document.forms['leave_message'];
 
-// Append the footer to the body
-document.body.appendChild(footer);
+// Add an event listener for form submission
+messageForm.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent page refresh
+  
+  // Retrieve form values
+  const usersName = event.target.usersName.value;
+  const usersEmail = event.target.usersEmail.value;
+  const usersMessage = event.target.usersMessage.value;
+  
+  console.log(usersName, usersEmail, usersMessage); // Log values
 
-// Create a new Date object and get the current year
-const today = new Date();
-const thisYear = today.getFullYear();
-
-// Select the footer element
-const footer1 = document.querySelector('footer');
-
-// Create a new paragraph element for the copyright text
-const copyright = document.createElement('p');
-copyright.innerHTML = `&copy; Your Name ${thisYear}`;
-
-// Append the copyright text to the footer
-footer.appendChild(copyright);
+  // Select the messages section and list
+  const messageSection = document.getElementById('messages');
+  const messageList = messageSection.querySelector('ul');
+  
+  // Create new message list item
+  const newMessage = document.createElement('li');
+  newMessage.innerHTML = `
+    <a href="mailto:${usersEmail}">${usersName}</a>: 
+    <span>${usersMessage}</span>
+  `;
+  
+  // Create remove button
+  const removeButton = document.createElement('button');
+  removeButton.innerText = 'Remove';
+  removeButton.type = 'button';
+  
+  // Add event listener to remove button
+  removeButton.addEventListener('click', function () {
+    newMessage.remove();
+  });
+  
+  // Append remove button and new message to list
+  newMessage.appendChild(removeButton);
+  messageList.appendChild(newMessage);
+  
+  // Reset the form
+  messageForm.reset();
+});
 
 // List of skills
-const skills = ["JavaScript", "HTML", "CSS", "Python", "GitHub", "Github Desktop"];
+const skills = ["JavaScript", "HTML", "CSS", "Python", "GitHub"];
 
 // Select the skills section and the <ul> element
 const skillsSection = document.getElementById('skills');
