@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-  background-color: #f0f0f0;
+  background-color: rgb(51, 65, 100);
   color: #333;
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -10,13 +10,14 @@ body {
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #2C3E50;
+  color: #ffffff;
   letter-spacing: 2px;
   text-align: center;
   margin-top: 20px;
 }
 
 h2 {
+  text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
   color: #2C3E50;
@@ -59,7 +60,7 @@ section {
   max-width: 800px;
 }
 
-#about, #experience, #connect, #leave-message, #messages {
+#about, #experience, #connect,#skills, #projects, #connect, #leave-message, #messages {
   margin-bottom: 20px;
   padding: 20px;
   background-color: #fff;
@@ -82,6 +83,16 @@ section {
   margin-bottom: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#page1 {
+  text-align: left;
+  margin:0;
+  padding:0;
+  font-size:large;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  color: #333;
 }
 
 /* Picture of Myles Styling */
