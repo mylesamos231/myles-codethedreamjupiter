@@ -54,32 +54,3 @@ for (let i = 0; i < skills.length; i++) {
   skill.innerText = skills[i];
   skillsList.appendChild(skill);
 }
-
-// Replace {GITHUB_USERNAME} with your actual GitHub username
-const GITHUB_USERNAME = 'mylesamos231';
-
-fetch(`https://api.github.com/users/${mylesamos231}/repos`)
-  .then(response => response.json())
-  .then(repositories => {
-    console.log(repositories); // Logs all repositories
-    displayRepositories(repositories); // Display repositories on the page
-  })
-  .catch(error => {
-    console.error('Error fetching repositories:', error);
-  });
-
-function displayRepositories(repositories) {
-  const projectSection = document.getElementById('projects');
-  const projectList = projectSection.querySelector('ul');
-  projectList.innerHTML = ''; // Clear existing content
-
-  repositories.forEach(repo => {
-    const project = document.createElement('li');
-    const repoLink = document.createElement('a');
-    repoLink.href = repo.html_url; // Link to the repository
-    repoLink.innerText = repo.name; // Repository name
-    repoLink.target = '_blank'; // Open in a new tab
-    project.appendChild(repoLink);
-    projectList.appendChild(project);
-  });
-}
